@@ -1,0 +1,113 @@
+<h2><i class="fas fa-question-circle fun-icon"></i> Quiz</h2>
+<div class="card fun-card">
+    <h3>Pon a Prueba tus Conocimientos</h3>
+    <p>Completa este breve cuestionario para evaluar lo que has aprendido sobre ondas y tsunamis.</p>
+    
+    <div class="quiz-container">
+        <div class="quiz-question">
+            <h4>1. ¿Qué propiedad de las ondas determina la cantidad de energía que transportan?</h4>
+            <div class="quiz-options">
+                <label>
+                    <input type="radio" name="q1" value="a">
+                    Frecuencia
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="b">
+                    Longitud de onda
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="c">
+                    Amplitud
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="d">
+                    Velocidad
+                </label>
+            </div>
+        </div>
+        
+        <div class="quiz-question">
+            <h4>2. ¿Cuál de los siguientes eventos puede generar un tsunami?</h4>
+            <div class="quiz-options">
+                <label>
+                    <input type="radio" name="q2" value="a">
+                    Huracanes
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="b">
+                    Tormentas eléctricas
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="c">
+                    Erupciones volcánicas en tierra
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="d">
+                    Terremotos submarinos
+                </label>
+            </div>
+        </div>
+        
+        <div class="quiz-question">
+            <h4>3. ¿Por qué los tsunamis pueden viajar a gran velocidad en el océano abierto pero son casi imperceptibles hasta que llegan a la costa?</h4>
+            <div class="quiz-options">
+                <label>
+                    <input type="radio" name="q3" value="a">
+                    Porque son invisibles bajo el agua
+                </label>
+                <label>
+                    <input type="radio" name="q3" value="b">
+                    Porque tienen gran longitud de onda pero poca altura en aguas profundas
+                </label>
+                <label>
+                    <input type="radio" name="q3" value="c">
+                    Porque viajan solo por el fondo marino
+                </label>
+                <label>
+                    <input type="radio" name="q3" value="d">
+                    Porque son más lentos que las olas normales
+                </label>
+            </div>
+        </div>
+        
+        <div class="quiz-question">
+            <h4>4. ¿Qué componente es esencial en un sistema de alerta temprana contra tsunamis?</h4>
+            <div class="quiz-options">
+                <label>
+                    <input type="radio" name="q4" value="a">
+                    Satélites meteorológicos
+                </label>
+                <label>
+                    <input type="radio" name="q4" value="b">
+                    Sensores de presión en el fondo marino
+                </label>
+                <label>
+                    <input type="radio" name="q4" value="c">
+                    Radares de tormentas
+                </label>
+                <label>
+                    <input type="radio" name="q4" value="d">
+                    Globos meteorológicos
+                </label>
+            </div>
+        </div>
+        
+        <div class="quiz-question">
+            <h4>5. Verdadero o Falso: Los tsunamis siempre se manifiestan como una serie de olas gigantes que rompen en la costa.</h4>
+            <div class="quiz-options">
+                <label>
+                    <input type="radio" name="q5" value="true">
+                    Verdadero
+                </label>
+                <label>
+                    <input type="radio" name="q5" value="false">
+                    Falso - A veces pueden manifestarse inicialmente como un rápido retroceso del mar
+                </label>
+            </div>
+        </div>
+        
+        <button onclick="checkQuiz()" class="btn">Verificar Respuestas</button>
+        
+        <div id="quiz-feedback" class="feedback" style="display: none;"></div>
+    </div>
+</div>
