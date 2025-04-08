@@ -14,15 +14,13 @@ document.addEventListener('DOMContentLoaded', function() {
             el.setAttribute('data-aos', 'fade-up');
             el.setAttribute('data-aos-delay', (index * 100).toString());
         });
-    } else {
-        console.warn('AOS library not loaded');
     }
     
     // Asegurarse de que la primera pestaña esté visible al cargar la página
     const introduccion = document.getElementById("introduccion");
     if (introduccion) {
+        introduccion.style.display = "block";
         introduccion.classList.add("active");
-        introduccion.style.display = "block"; // Asegurarse de que sea visible
     }
     
     // Asegurarse de que el primer botón tenga la clase active
@@ -34,13 +32,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Función para abrir pestañas
 function openTab(evt, tabName) {
-    console.log("Abriendo pestaña:", tabName);
-    
     // Ocultar todo el contenido de las pestañas
     var tabContent = document.getElementsByClassName("tab-content");
     for (var i = 0; i < tabContent.length; i++) {
         tabContent[i].style.display = "none";
-        tabContent[i].classList.remove("active");
     }
     
     // Quitar la clase "active" de todos los botones de pestañas
@@ -50,21 +45,30 @@ function openTab(evt, tabName) {
     }
     
     // Mostrar la pestaña actual y añadir la clase "active" al botón
-    var currentTab = document.getElementById(tabName);
-    if (currentTab) {
-        currentTab.style.display = "block";
-        currentTab.classList.add("active");
-    }
-    
+    document.getElementById(tabName).style.display = "block";
     evt.currentTarget.classList.add("active");
-    
-    // Reinicializar AOS para los elementos visibles
-    if (typeof AOS !== 'undefined') {
-        setTimeout(() => {
-            AOS.refresh();
-        }, 100);
-    }
 }
+
+// Inicializar AOS (Animate On Scroll)
+document.addEventListener('DOMContentLoaded', function() {
+    // Inicializar AOS
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    }
+    
+    // Mostrar la primera pestaña por defecto
+    document.getElementById("introduccion").style.display = "block";
+    
+    // Asegurarse de que el primer botón tenga la clase active
+    var firstButton = document.querySelector(".tab-button");
+    if (firstButton) {
+        firstButton.classList.add("active");
+    }
+});
 
 // Asegurarse de que la primera pestaña esté visible al cargar la página
 window.onload = function() {

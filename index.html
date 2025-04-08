@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- Animate.css para animaciones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <!-- Justo antes de cerrar el head -->
+    <!-- Añadir justo antes de cerrar el head -->
     <!-- AOS - Animate On Scroll -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Enlace al archivo CSS externo -->
@@ -19,38 +19,31 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="scripts.js" defer></script>
     <!-- Add this style block just before the closing </head> tag -->
+    <!-- Modificar la sección de estilos en el head -->
     <style>
-        /* Estilos adicionales para asegurar que las pestañas funcionen correctamente */
-        .tab-content {
-            display: none;
-        }
-        
-        .tab-content.active {
-            display: block;
-        }
-        
-        /* Asegurarse de que el texto sea visible */
-        body, p, h1, h2, h3, h4, h5, h6, li, span {
-            color: #333 !important;
-        }
-        
-        /* Fix for fading text in introduction */
-        #introduccion p, #introduccion h3, #introduccion h4, #introduccion li {
-            color: #333 !important;
-            opacity: 1 !important;
-            text-shadow: 0 0 1px rgba(255,255,255,0.5);
-        }
-        
-        .correct-answer {
-            background-color: rgba(6, 214, 160, 0.2) !important;
-            border-left: 4px solid #06d6a0 !important;
-        }
-        
-        .wrong-answer {
-            background-color: rgba(239, 71, 111, 0.2) !important;
-            border-left: 4px solid #ef476f !important;
-        }
-    </style>
+    /* Estilos para las pestañas - Solución definitiva */
+    .tab-content {
+        display: none;
+    }
+    
+    .tab-content.active {
+        display: block;
+    }
+    
+    /* Fix for navigation buttons */
+    .tab-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+        margin-bottom: 20px;
+    }
+    
+    .tab-button {
+        flex: 0 0 auto;
+        margin: 0 2px;
+    }
+</style>
 </head>
 <body>
     <div class="ocean-background">
@@ -104,324 +97,756 @@
                 <span>Quiz</span>
             </button>
         </nav>
-        
-        <!-- Contenido de las pestañas -->
-        <div id="introduccion" class="tab-content active">
-            <h2><i class="fas fa-info-circle fun-icon"></i> Introducción</h2>
-            <div class="card fun-card">
-                <h3>El Poder de las Ondas</h3>
-                <p>Las ondas son uno de los fenómenos más fascinantes y fundamentales de la física. Están presentes en casi todos los aspectos de nuestra vida: desde las ondas sonoras que nos permiten comunicarnos, hasta las ondas electromagnéticas que transportan información a través de nuestros dispositivos móviles.</p>
-                
-                <p>Pero las ondas también pueden manifestarse de formas devastadoras. Los tsunamis, gigantescas olas generadas por perturbaciones sísmicas en el fondo marino, son un ejemplo dramático del poder destructivo que pueden tener las ondas cuando alcanzan grandes magnitudes.</p>
-                
-                <div style="text-align: center; margin: 20px 0;">
-                    <img src="https://www.usgs.gov/sites/default/files/styles/full_width/public/2022-02/tsunami-diagram-USGS.jpg" alt="Diagrama de formación de tsunami" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-                    <p style="font-style: italic; margin-top: 10px; font-size: 0.9rem;">Diagrama que muestra la formación y propagación de un tsunami. Fuente: USGS</p>
-                </div>
-                
-                <h3>El Desafío</h3>
-                <p>En esta WebQuest, nos sumergiremos en el estudio de la física de las ondas y su aplicación práctica en un contexto de gran relevancia: el desarrollo de sistemas de alerta temprana para tsunamis.</p>
-                
-                <p>Colombia, con su extensa costa pacífica, es vulnerable a estos fenómenos. En 1979, un tsunami devastador golpeó la ciudad de Tumaco tras un terremoto de magnitud 7.9, causando numerosas víctimas y destrucción generalizada. Este evento histórico nos recuerda la importancia de comprender estos fenómenos y desarrollar tecnologías que puedan salvar vidas.</p>
-                
-                <p>A lo largo de esta aventura de aprendizaje, trabajarán en equipos multidisciplinarios para diseñar un sistema de alerta temprana contra tsunamis, aplicando principios físicos fundamentales y desarrollando habilidades de investigación, diseño y comunicación científica.</p>
-                
-                <div style="background-color: #f8f9fa; border-left: 4px solid var(--warning-color); padding: 15px; margin: 20px 0; border-radius: 0 8px 8px 0;">
-                    <h4 style="color: var(--warning-color); margin-top: 0;"><i class="fas fa-lightbulb"></i> Pregunta Guía</h4>
-                    <p style="margin-bottom: 0;">¿Cómo podemos aplicar los principios físicos de las ondas para desarrollar un sistema efectivo de alerta temprana contra tsunamis que proteja a las comunidades costeras de Colombia?</p>
-                </div>
+    </nav>
+    
+    <!-- Contenido de las pestañas -->
+    <div id="introduccion" class="tab-content active">
+        <h2><i class="fas fa-info-circle fun-icon"></i> Introducción</h2>
+        <div class="card fun-card">
+            <h3>El Poder de las Ondas</h3>
+            <p>Las ondas son uno de los fenómenos más fascinantes y fundamentales de la física. Están presentes en casi todos los aspectos de nuestra vida: desde las ondas sonoras que nos permiten comunicarnos, hasta las ondas electromagnéticas que transportan información a través de nuestros dispositivos móviles.</p>
+            
+            <p>Pero las ondas también pueden manifestarse de formas devastadoras. Los tsunamis, gigantescas olas generadas por perturbaciones sísmicas en el fondo marino, son un ejemplo dramático del poder destructivo que pueden tener las ondas cuando alcanzan grandes magnitudes.</p>
+            
+            <div style="text-align: center; margin: 20px 0;">
+                <img src="https://www.usgs.gov/sites/default/files/styles/full_width/public/2022-02/tsunami-diagram-USGS.jpg" alt="Diagrama de formación de tsunami" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                <p style="font-style: italic; margin-top: 10px; font-size: 0.9rem;">Diagrama que muestra la formación y propagación de un tsunami. Fuente: USGS</p>
+            </div>
+            
+            <h3>El Desafío</h3>
+            <p>En esta WebQuest, nos sumergiremos en el estudio de la física de las ondas y su aplicación práctica en un contexto de gran relevancia: el desarrollo de sistemas de alerta temprana para tsunamis.</p>
+            
+            <p>Colombia, con su extensa costa pacífica, es vulnerable a estos fenómenos. En 1979, un tsunami devastador golpeó la ciudad de Tumaco tras un terremoto de magnitud 7.9, causando numerosas víctimas y destrucción generalizada. Este evento histórico nos recuerda la importancia de comprender estos fenómenos y desarrollar tecnologías que puedan salvar vidas.</p>
+            
+            <p>A lo largo de esta aventura de aprendizaje, trabajarán en equipos multidisciplinarios para diseñar un sistema de alerta temprana contra tsunamis, aplicando principios físicos fundamentales y desarrollando habilidades de investigación, diseño y comunicación científica.</p>
+            
+            <div style="background-color: #f8f9fa; border-left: 4px solid var(--warning-color); padding: 15px; margin: 20px 0; border-radius: 0 8px 8px 0;">
+                <h4 style="color: var(--warning-color); margin-top: 0;"><i class="fas fa-lightbulb"></i> Pregunta Guía</h4>
+                <p style="margin-bottom: 0;">¿Cómo podemos aplicar los principios físicos de las ondas para desarrollar un sistema efectivo de alerta temprana contra tsunamis que proteja a las comunidades costeras de Colombia?</p>
             </div>
         </div>
-        
-        <div id="objetivos" class="tab-content">
-            <h2><i class="fas fa-bullseye fun-icon"></i> Objetivos</h2>
-            <div class="card fun-card">
-                <h3>Objetivos de Aprendizaje</h3>
-                <p>Al completar esta WebQuest, los estudiantes serán capaces de:</p>
-                
-                <ul style="list-style-type: none; padding-left: 0;">
-                    <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
-                        <i class="fas fa-check-circle" style="color: var(--success-color); margin-right: 10px; margin-top: 3px;"></i>
-                        <span>Explicar los principios físicos fundamentales de las ondas, incluyendo amplitud, frecuencia, longitud de onda y velocidad.</span>
+    </div>
+    
+    <div id="objetivos" class="tab-content">
+        <h2><i class="fas fa-bullseye fun-icon"></i> Objetivos</h2>
+        <div class="card fun-card">
+            <h3>Objetivos de Aprendizaje</h3>
+            <p>Al completar esta WebQuest, los estudiantes serán capaces de:</p>
+            
+            <ul style="list-style-type: none; padding-left: 0;">
+                <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+                    <i class="fas fa-check-circle" style="color: var(--success-color); margin-right: 10px; margin-top: 3px;"></i>
+                    <span>Explicar los principios físicos fundamentales de las ondas, incluyendo amplitud, frecuencia, longitud de onda y velocidad.</span>
+                </li>
+                <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+                    <i class="fas fa-check-circle" style="color: var(--success-color); margin-right: 10px; margin-top: 3px;"></i>
+                    <span>Describir cómo se generan los tsunamis y los factores que influyen en su propagación.</span>
+                </li>
+                <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+                    <i class="fas fa-check-circle" style="color: var(--success-color); margin-right: 10px; margin-top: 3px;"></i>
+                    <span>Analizar datos históricos de tsunamis que han afectado la costa pacífica colombiana.</span>
+                </li>
+                <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+                    <i class="fas fa-check-circle" style="color: var(--success-color); margin-right: 10px; margin-top: 3px;"></i>
+                    <span>Diseñar un sistema de alerta temprana contra tsunamis basado en principios físicos.</span>
+                </li>
+                <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+                    <i class="fas fa-check-circle" style="color: var(--success-color); margin-right: 10px; margin-top: 3px;"></i>
+                    <span>Evaluar la efectividad de diferentes sistemas de alerta temprana existentes.</span>
+                </li>
+                <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+                    <i class="fas fa-check-circle" style="color: var(--success-color); margin-right: 10px; margin-top: 3px;"></i>
+                    <span>Comunicar de manera efectiva los resultados de su investigación y diseño.</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Aquí irían las demás pestañas con su contenido -->
+    
+    <div id="tarea" class="tab-content">
+        <h2><i class="fas fa-tasks fun-icon"></i> Tarea</h2>
+        <div class="card fun-card">
+            <h3>Su Misión</h3>
+            <p>Ustedes son un equipo de científicos e ingenieros contratados por la Dirección General Marítima de Colombia (DIMAR) para diseñar un sistema de alerta temprana contra tsunamis para la costa pacífica colombiana.</p>
+            
+            <div style="text-align: center; margin: 20px 0;">
+                <img src="https://www.dimar.mil.co/sites/default/files/noticias/tsunami.jpg" alt="Costa pacífica colombiana" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                <p style="font-style: italic; margin-top: 10px; font-size: 0.9rem;">Costa pacífica colombiana, vulnerable a tsunamis. Fuente: DIMAR</p>
+            </div>
+            
+            <h3>Descripción de la Tarea</h3>
+            <p>Su equipo deberá:</p>
+            
+            <ol>
+                <li><strong>Investigar y comprender</strong> los principios físicos de las ondas y cómo se aplican a los tsunamis.</li>
+                <li><strong>Analizar</strong> datos históricos de tsunamis que han afectado la costa pacífica colombiana.</li>
+                <li><strong>Diseñar</strong> un sistema de alerta temprana que incluya:
+                    <ul>
+                        <li>Sensores y mecanismos de detección</li>
+                        <li>Sistemas de procesamiento de datos</li>
+                        <li>Métodos de comunicación y alerta a la población</li>
+                        <li>Protocolos de evacuación</li>
+                    </ul>
+                </li>
+                <li><strong>Crear</strong> un informe técnico detallando su diseño y justificando sus decisiones basándose en principios físicos.</li>
+                <li><strong>Preparar</strong> una presentación para explicar su sistema a funcionarios gubernamentales (sus compañeros de clase).</li>
+            </ol>
+            
+            <div style="background-color: #f8f9fa; border-left: 4px solid var(--primary-color); padding: 15px; margin: 20px 0; border-radius: 0 8px 8px 0;">
+                <h4 style="color: var(--primary-color); margin-top: 0;"><i class="fas fa-lightbulb"></i> Consideraciones Importantes</h4>
+                <p>Su sistema debe ser:</p>
+                <ul style="margin-bottom: 0;">
+                    <li><strong>Científicamente sólido:</strong> Basado en principios físicos correctos</li>
+                    <li><strong>Técnicamente viable:</strong> Utilizando tecnología existente o en desarrollo</li>
+                    <li><strong>Eficiente:</strong> Capaz de proporcionar alertas con suficiente antelación</li>
+                    <li><strong>Adaptado al contexto:</strong> Considerando las características geográficas y sociales de Colombia</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="proceso" class="tab-content">
+        <h2><i class="fas fa-cogs fun-icon"></i> Proceso</h2>
+        <div class="card fun-card">
+            <h3>Pasos a Seguir</h3>
+            <p>Para completar esta WebQuest de manera efectiva, sigan estos pasos:</p>
+            
+            <div class="process-step" data-aos="fade-up">
+                <h4><i class="fas fa-users"></i> Paso 1: Formación de Equipos</h4>
+                <p>Formen equipos de 3-4 estudiantes. Cada equipo debe asignar roles específicos:</p>
+                <ul>
+                    <li><strong>Físico:</strong> Especialista en los principios de ondas</li>
+                    <li><strong>Ingeniero de Sistemas:</strong> Especialista en diseño de sensores y procesamiento de datos</li>
+                    <li><strong>Comunicador:</strong> Especialista en sistemas de alerta y comunicación</li>
+                    <li><strong>Analista de Datos:</strong> Especialista en análisis de datos históricos</li>
+                </ul>
+            </div>
+            
+            <div class="process-step" data-aos="fade-up" data-aos-delay="100">
+                <h4><i class="fas fa-book-open"></i> Paso 2: Investigación Básica</h4>
+                <p>Investiguen y comprendan los siguientes conceptos fundamentales:</p>
+                <ul>
+                    <li>Propiedades de las ondas: amplitud, frecuencia, longitud de onda, velocidad</li>
+                    <li>Cómo se generan los tsunamis y cómo se propagan</li>
+                    <li>Historia de tsunamis en Colombia, especialmente el de Tumaco en 1979</li>
+                    <li>Sistemas de alerta temprana existentes en otros países</li>
+                </ul>
+                <p>Utilicen los recursos proporcionados en la sección de Recursos.</p>
+            </div>
+            
+            <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+                <h4><i class="fas fa-chart-line"></i> Paso 3: Análisis de Datos</h4>
+                <p>Analicen datos históricos de tsunamis que han afectado la costa pacífica colombiana:</p>
+                <ul>
+                    <li>Frecuencia de ocurrencia</li>
+                    <li>Magnitud y alcance</li>
+                    <li>Tiempo entre la generación del tsunami y su llegada a la costa</li>
+                    <li>Patrones de propagación</li>
+                </ul>
+            </div>
+            
+            <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+                <h4><i class="fas fa-drafting-compass"></i> Paso 4: Diseño del Sistema</h4>
+                <p>Diseñen su sistema de alerta temprana, considerando:</p>
+                <ul>
+                    <li><strong>Detección:</strong> Tipos de sensores, ubicación, sensibilidad</li>
+                    <li><strong>Procesamiento:</strong> Algoritmos para analizar datos y determinar amenazas</li>
+                    <li><strong>Comunicación:</strong> Métodos para alertar a autoridades y población</li>
+                    <li><strong>Respuesta:</strong> Protocolos de evacuación y respuesta</li>
+                </ul>
+                <p>Justifiquen cada decisión basándose en principios físicos y datos analizados.</p>
+            </div>
+            
+            <div class="process-step" data-aos="fade-up" data-aos-delay="400">
+                <h4><i class="fas fa-file-alt"></i> Paso 5: Elaboración del Informe</h4>
+                <p>Preparen un informe técnico (5-7 páginas) que incluya:</p>
+                <ul>
+                    <li>Resumen ejecutivo</li>
+                    <li>Fundamentos teóricos (principios físicos relevantes)</li>
+                    <li>Análisis de datos históricos</li>
+                    <li>Descripción detallada del sistema propuesto</li>
+                    <li>Justificación técnica de cada componente</li>
+                    <li>Limitaciones y consideraciones futuras</li>
+                    <li>Referencias bibliográficas</li>
+                </ul>
+            </div>
+            
+            <div class="process-step" data-aos="fade-up" data-aos-delay="500">
+                <h4><i class="fas fa-chalkboard-teacher"></i> Paso 6: Presentación</h4>
+                <p>Preparen una presentación de 10-15 minutos para explicar su sistema:</p>
+                <ul>
+                    <li>Utilicen ayudas visuales (diagramas, gráficos)</li>
+                    <li>Expliquen los principios físicos de manera clara</li>
+                    <li>Demuestren cómo funcionaría su sistema en un escenario real</li>
+                    <li>Estén preparados para responder preguntas</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="recursos" class="tab-content">
+        <h2><i class="fas fa-book fun-icon"></i> Recursos</h2>
+        <div class="card fun-card">
+            <h3>Fuentes de Información</h3>
+            <p>Utilicen los siguientes recursos para su investigación:</p>
+            
+            <div class="resource-category">
+                <h4><i class="fas fa-atom"></i> Física de Ondas</h4>
+                <ul class="resource-list">
+                    <li>
+                        <a href="https://www.khanacademy.org/science/physics/mechanical-waves-and-sound" target="_blank">
+                            <strong>Khan Academy: Ondas Mecánicas y Sonido</strong>
+                        </a>
+                        <p>Excelentes tutoriales sobre los principios básicos de las ondas.</p>
                     </li>
-                    <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
-                        <i class="fas fa-check-circle" style="color: var(--success-color); margin-right: 10px; margin-top: 3px;"></i>
-                        <span>Describir cómo se generan los tsunamis y los factores que influyen en su propagación.</span>
+                    <li>
+                        <a href="https://phet.colorado.edu/es/simulations/category/physics/waves" target="_blank">
+                            <strong>PhET: Simulaciones de Ondas</strong>
+                        </a>
+                        <p>Simulaciones interactivas para visualizar el comportamiento de las ondas.</p>
                     </li>
-                    <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
-                        <i class="fas fa-check-circle" style="color: var(--success-color); margin-right: 10px; margin-top: 3px;"></i>
-                        <span>Analizar datos históricos de tsunamis que han afectado la costa pacífica colombiana.</span>
+                    <li>
+                        <a href="https://www.youtube.com/watch?v=VE520z_ugcU" target="_blank">
+                            <strong>Video: Física de Ondas Explicada</strong>
+                        </a>
+                        <p>Explicación visual de los conceptos fundamentales de ondas.</p>
                     </li>
-                    <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
-                        <i class="fas fa-check-circle" style="color: var(--success-color); margin-right: 10px; margin-top: 3px;"></i>
-                        <span>Diseñar un sistema de alerta temprana contra tsunamis basado en principios físicos.</span>
+                </ul>
+            </div>
+            
+            <div class="resource-category">
+                <h4><i class="fas fa-water"></i> Tsunamis</h4>
+                <ul class="resource-list">
+                    <li>
+                        <a href="https://www.usgs.gov/special-topics/water-science-school/science/tsunamis-and-tsunami-hazards" target="_blank">
+                            <strong>USGS: Tsunamis y Peligros de Tsunamis</strong>
+                        </a>
+                        <p>Información científica detallada sobre tsunamis.</p>
                     </li>
-                    <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
-                        <i class="fas fa-check-circle" style="color: var(--success-color); margin-right: 10px; margin-top: 3px;"></i>
-                        <span>Evaluar la efectividad de diferentes sistemas de alerta temprana existentes.</span>
+                    <li>
+                        <a href="https://www.noaa.gov/education/resource-collections/ocean-coasts/tsunamis" target="_blank">
+                            <strong>NOAA: Recursos Educativos sobre Tsunamis</strong>
+                        </a>
+                        <p>Colección de recursos educativos sobre tsunamis.</p>
                     </li>
-                    <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
-                        <i class="fas fa-check-circle" style="color: var(--success-color); margin-right: 10px; margin-top: 3px;"></i>
-                        <span>Comunicar de manera efectiva los resultados de su investigación y diseño.</span>
+                    <li>
+                        <a href="https://www.youtube.com/watch?v=Wx9vPv-T51I" target="_blank">
+                            <strong>Video: Cómo se Forman los Tsunamis</strong>
+                        </a>
+                        <p>Animación detallada del proceso de formación de tsunamis.</p>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="resource-category">
+                <h4><i class="fas fa-map-marked-alt"></i> Tsunamis en Colombia</h4>
+                <ul class="resource-list">
+                    <li>
+                        <a href="https://www.dimar.mil.co/content/tsunami-de-tumaco-1979" target="_blank">
+                            <strong>DIMAR: Tsunami de Tumaco 1979</strong>
+                        </a>
+                        <p>Información oficial sobre el tsunami de Tumaco de 1979.</p>
+                    </li>
+                    <li>
+                        <a href="https://www.sgc.gov.co/sismos-y-tsunamis" target="_blank">
+                            <strong>Servicio Geológico Colombiano: Sismos y Tsunamis</strong>
+                        </a>
+                        <p>Datos históricos y monitoreo de actividad sísmica en Colombia.</p>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="resource-category">
+                <h4><i class="fas fa-bell"></i> Sistemas de Alerta Temprana</h4>
+                <ul class="resource-list">
+                    <li>
+                        <a href="https://www.tsunami.gov/" target="_blank">
+                            <strong>Sistema de Alerta de Tsunamis de EE.UU.</strong>
+                        </a>
+                        <p>Ejemplo de un sistema de alerta temprana en funcionamiento.</p>
+                    </li>
+                    <li>
+                        <a href="https://www.jma.go.jp/jma/en/Activities/eew.html" target="_blank">
+                            <strong>Sistema de Alerta Temprana de Japón</strong>
+                        </a>
+                        <p>Uno de los sistemas más avanzados del mundo.</p>
+                    </li>
+                    <li>
+                        <a href="https://www.undrr.org/publication/early-warning-systems-multi-hazard-approach" target="_blank">
+                            <strong>ONU: Sistemas de Alerta Temprana</strong>
+                        </a>
+                        <p>Guía sobre mejores prácticas para sistemas de alerta temprana.</p>
                     </li>
                 </ul>
             </div>
         </div>
-        
-        <!-- Aquí irían las demás pestañas con su contenido -->
-        
-        <div id="tarea" class="tab-content">
-            <h2><i class="fas fa-tasks fun-icon"></i> Tarea</h2>
-            <div class="card fun-card">
-                <h3>Su Misión</h3>
-                <p>Ustedes son un equipo de científicos e ingenieros contratados por la Dirección General Marítima de Colombia (DIMAR) para diseñar un sistema de alerta temprana contra tsunamis para la costa pacífica colombiana.</p>
-                
-                <div style="text-align: center; margin: 20px 0;">
-                    <img src="https://www.dimar.mil.co/sites/default/files/noticias/tsunami.jpg" alt="Costa pacífica colombiana" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-                    <p style="font-style: italic; margin-top: 10px; font-size: 0.9rem;">Costa pacífica colombiana, vulnerable a tsunamis. Fuente: DIMAR</p>
-                </div>
-                
-                <h3>Descripción de la Tarea</h3>
-                <p>Su equipo deberá:</p>
-                
-                <ol>
-                    <li><strong>Investigar y comprender</strong> los principios físicos de las ondas y cómo se aplican a los tsunamis.</li>
-                    <li><strong>Analizar</strong> datos históricos de tsunamis que han afectado la costa pacífica colombiana.</li>
-                    <li><strong>Diseñar</strong> un sistema de alerta temprana que incluya:
-                        <ul>
-                            <li>Sensores y mecanismos de detección</li>
-                            <li>Sistemas de procesamiento de datos</li>
-                            <li>Métodos de comunicación y alerta a la población</li>
-                            <li>Protocolos de evacuación</li>
-                        </ul>
-                    </li>
-                    <li><strong>Crear</strong> un informe técnico detallando su diseño y justificando sus decisiones basándose en principios físicos.</li>
-                    <li><strong>Preparar</strong> una presentación para explicar su sistema a funcionarios gubernamentales (sus compañeros de clase).</li>
-                </ol>
-                
-                <div style="background-color: #f8f9fa; border-left: 4px solid var(--primary-color); padding: 15px; margin: 20px 0; border-radius: 0 8px 8px 0;">
-                    <h4 style="color: var(--primary-color); margin-top: 0;"><i class="fas fa-lightbulb"></i> Consideraciones Importantes</h4>
-                    <p>Su sistema debe ser:</p>
-                    <ul style="margin-bottom: 0;">
-                        <li><strong>Científicamente sólido:</strong> Basado en principios físicos correctos</li>
-                        <li><strong>Técnicamente viable:</strong> Utilizando tecnología existente o en desarrollo</li>
-                        <li><strong>Eficiente:</strong> Capaz de proporcionar alertas con suficiente antelación</li>
-                        <li><strong>Adaptado al contexto:</strong> Considerando las características geográficas y sociales de Colombia</li>
-                    </ul>
-                </div>
+    </div>
+    
+    <div id="evaluacion" class="tab-content">
+        <h2><i class="fas fa-chart-bar fun-icon"></i> Evaluación</h2>
+        <div class="card fun-card">
+            <h3>Criterios de Evaluación</h3>
+            <p>Su trabajo será evaluado según los siguientes criterios:</p>
+            
+            <div class="rubric">
+                <table class="evaluation-table">
+                    <thead>
+                        <tr>
+                            <th>Criterio</th>
+                            <th>Excelente (5)</th>
+                            <th>Bueno (4)</th>
+                            <th>Satisfactorio (3)</th>
+                            <th>Necesita Mejorar (1-2)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Comprensión de Conceptos Físicos</strong></td>
+                            <td>Demuestra comprensión profunda y precisa de los principios físicos de las ondas y su aplicación a tsunamis.</td>
+                            <td>Demuestra buena comprensión de los principios físicos con mínimos errores.</td>
+                            <td>Demuestra comprensión básica con algunos errores conceptuales.</td>
+                            <td>Muestra comprensión limitada con errores conceptuales significativos.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Análisis de Datos</strong></td>
+                            <td>Análisis exhaustivo y perspicaz de datos históricos, con conclusiones bien fundamentadas.</td>
+                            <td>Buen análisis de datos con conclusiones razonables.</td>
+                            <td>Análisis básico con algunas conclusiones válidas.</td>
+                            <td>Análisis superficial o con interpretaciones incorrectas.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Diseño del Sistema</strong></td>
+                            <td>Diseño innovador, técnicamente viable y completamente justificado con principios físicos.</td>
+                            <td>Diseño sólido con buena justificación técnica.</td>
+                            <td>Diseño funcional con justificación básica.</td>
+                            <td>Diseño poco desarrollado o con fallos fundamentales.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Informe Técnico</strong></td>
+                            <td>Informe completo, bien estructurado, con argumentos sólidos y referencias adecuadas.</td>
+                            <td>Informe bien desarrollado con buena estructura y argumentación.</td>
+                            <td>Informe aceptable con estructura básica.</td>
+                            <td>Informe incompleto o desorganizado.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Presentación</strong></td>
+                            <td>Presentación clara, convincente, con excelentes ayudas visuales y respuestas sólidas a preguntas.</td>
+                            <td>Buena presentación con ayudas visuales efectivas.</td>
+                            <td>Presentación adecuada con ayudas visuales básicas.</td>
+                            <td>Presentación confusa o con ayudas visuales inadecuadas.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Trabajo en Equipo</strong></td>
+                            <td>Excelente colaboración, con roles bien definidos y contribución equitativa de todos los miembros.</td>
+                            <td>Buena colaboración con roles claros.</td>
+                            <td>Colaboración aceptable con algunos desequilibrios en las contribuciones.</td>
+                            <td>Colaboración limitada o desequilibrio significativo en las contribuciones.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="self-evaluation">
+                <h3>Autoevaluación</h3>
+                <p>Además de la evaluación del profesor, cada equipo realizará una autoevaluación utilizando la misma rúbrica. Esta reflexión les ayudará a identificar fortalezas y áreas de mejora en su trabajo.</p>
             </div>
         </div>
-        
-        <div id="proceso" class="tab-content">
-            <h2><i class="fas fa-cogs fun-icon"></i> Proceso</h2>
-            <div class="card fun-card">
-                <h3>Pasos a Seguir</h3>
-                <p>Para completar esta WebQuest de manera efectiva, sigan estos pasos:</p>
-                
-                <div class="process-step" data-aos="fade-up">
-                    <h4><i class="fas fa-users"></i> Paso 1: Formación de Equipos</h4>
-                    <p>Formen equipos de 3-4 estudiantes. Cada equipo debe asignar roles específicos:</p>
-                    <ul>
-                        <li><strong>Físico:</strong> Especialista en los principios de ondas</li>
-                        <li><strong>Ingeniero de Sistemas:</strong> Especialista en diseño de sensores y procesamiento de datos</li>
-                        <li><strong>Comunicador:</strong> Especialista en sistemas de alerta y comunicación</li>
-                        <li><strong>Analista de Datos:</strong> Especialista en análisis de datos históricos</li>
-                    </ul>
-                </div>
-                
-                <div class="process-step" data-aos="fade-up" data-aos-delay="100">
-                    <h4><i class="fas fa-book-open"></i> Paso 2: Investigación Básica</h4>
-                    <p>Investiguen y comprendan los siguientes conceptos fundamentales:</p>
-                    <ul>
-                        <li>Propiedades de las ondas: amplitud, frecuencia, longitud de onda, velocidad</li>
-                        <li>Cómo se generan los tsunamis y cómo se propagan</li>
-                        <li>Historia de tsunamis en Colombia, especialmente el de Tumaco en 1979</li>
-                        <li>Sistemas de alerta temprana existentes en otros países</li>
-                    </ul>
-                    <p>Utilicen los recursos proporcionados en la sección de Recursos.</p>
-                </div>
-                
-                <div class="process-step" data-aos="fade-up" data-aos-delay="200">
-                    <h4><i class="fas fa-chart-line"></i> Paso 3: Análisis de Datos</h4>
-                    <p>Analicen datos históricos de tsunamis que han afectado la costa pacífica colombiana:</p>
-                    <ul>
-                        <li>Frecuencia de ocurrencia</li>
-                        <li>Magnitud y alcance</li>
-                        <li>Tiempo entre la generación del tsunami y su llegada a la costa</li>
-                        <li>Patrones de propagación</li>
-                    </ul>
-                </div>
-                
-                <div class="process-step" data-aos="fade-up" data-aos-delay="300">
-                    <h4><i class="fas fa-drafting-compass"></i> Paso 4: Diseño del Sistema</h4>
-                    <p>Diseñen su sistema de alerta temprana, considerando:</p>
-                    <ul>
-                        <li><strong>Detección:</strong> Tipos de sensores, ubicación, sensibilidad</li>
-                        <li><strong>Procesamiento:</strong> Algoritmos para analizar datos y determinar amenazas</li>
-                        <li><strong>Comunicación:</strong> Métodos para alertar a autoridades y población</li>
-                        <li><strong>Respuesta:</strong> Protocolos de evacuación y respuesta</li>
-                    </ul>
-                    <p>Justifiquen cada decisión basándose en principios físicos y datos analizados.</p>
-                </div>
-                
-                <div class="process-step" data-aos="fade-up" data-aos-delay="400">
-                    <h4><i class="fas fa-file-alt"></i> Paso 5: Elaboración del Informe</h4>
-                    <p>Preparen un informe técnico (5-7 páginas) que incluya:</p>
-                    <ul>
-                        <li>Resumen ejecutivo</li>
-                        <li>Fundamentos teóricos (principios físicos relevantes)</li>
-                        <li>Análisis de datos históricos</li>
-                        <li>Descripción detallada del sistema propuesto</li>
-                        <li>Justificación técnica de cada componente</li>
-                        <li>Limitaciones y consideraciones futuras</li>
-                        <li>Referencias bibliográficas</li>
-                    </ul>
-                </div>
-                
-                <div class="process-step" data-aos="fade-up" data-aos-delay="500">
-                    <h4><i class="fas fa-chalkboard-teacher"></i> Paso 6: Presentación</h4>
-                    <p>Preparen una presentación de 10-15 minutos para explicar su sistema:</p>
-                    <ul>
-                        <li>Utilicen ayudas visuales (diagramas, gráficos)</li>
-                        <li>Expliquen los principios físicos de manera clara</li>
-                        <li>Demuestren cómo funcionaría su sistema en un escenario real</li>
-                        <li>Estén preparados para responder preguntas</li>
-                    </ul>
-                </div>
+    </div>
+    
+    <div id="conclusion" class="tab-content">
+        <h2><i class="fas fa-flag-checkered fun-icon"></i> Conclusión</h2>
+        <div class="card fun-card">
+            <h3>Reflexión Final</h3>
+            <p>A lo largo de esta WebQuest, han explorado la fascinante intersección entre la física de ondas y su aplicación práctica en sistemas que pueden salvar vidas. Han desarrollado no solo conocimientos científicos, sino también habilidades de investigación, diseño, trabajo en equipo y comunicación.</p>
+            
+            <div style="text-align: center; margin: 20px 0;">
+                <img src="https://www.nasa.gov/sites/default/files/thumbnails/image/tsunami_waves_from_space.jpg" alt="Tsunami visto desde el espacio" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                <p style="font-style: italic; margin-top: 10px; font-size: 0.9rem;">Ondas de tsunami vistas desde el espacio. Fuente: NASA</p>
+            </div>
+            
+            <h3>Importancia del Aprendizaje</h3>
+            <p>Los conocimientos y habilidades que han adquirido tienen relevancia más allá del aula:</p>
+            <ul>
+                <li><strong>Relevancia científica:</strong> Han profundizado en principios físicos fundamentales que explican numerosos fenómenos naturales.</li>
+                <li><strong>Relevancia social:</strong> Han trabajado en soluciones que pueden proteger comunidades vulnerables y salvar vidas.</li>
+                <li><strong>Relevancia personal:</strong> Han desarrollado habilidades transferibles como el pensamiento crítico, la resolución de problemas y la comunicación efectiva.</li>
+            </ul>
+            
+            <h3>Próximos Pasos</h3>
+            <p>Este proyecto puede ser el punto de partida para explorar otras áreas relacionadas:</p>
+            <ul>
+                <li>Profundizar en otros tipos de ondas y sus aplicaciones</li>
+                <li>Explorar cómo el cambio climático puede afectar la frecuencia e intensidad de los tsunamis</li>
+                <li>Investigar cómo la inteligencia artificial y el big data pueden mejorar los sistemas de alerta temprana</li>
+                <li>Estudiar el impacto psicológico y social de los desastres naturales y cómo mejorar la resiliencia comunitaria</li>
+            </ul>
+            
+            <div style="background-color: #f8f9fa; border-left: 4px solid var(--success-color); padding: 15px; margin: 20px 0; border-radius: 0 8px 8px 0;">
+                <h4 style="color: var(--success-color); margin-top: 0;"><i class="fas fa-quote-left"></i> Reflexión Final</h4>
+                <p style="margin-bottom: 0;">"La ciencia no solo nos ayuda a entender el mundo, sino también a protegerlo y a protegernos. Cada avance en nuestro conocimiento de las ondas y los tsunamis representa un paso hacia un futuro más seguro para las comunidades costeras de todo el mundo."</p>
             </div>
         </div>
-        
-        <div id="recursos" class="tab-content">
-            <h2><i class="fas fa-book fun-icon"></i> Recursos</h2>
-            <div class="card fun-card">
-                <h3>Recursos para su Investigación</h3>
-                <p>Aquí encontrarán recursos organizados por categorías para ayudarles en su proyecto:</p>
-                
-                <div class="grid">
-                    <div class="resource-card" data-aos="fade-up">
-                        <h4><i class="fas fa-wave-square"></i> Física de Ondas</h4>
-                        <ul>
-                            <li><a href="https://www.khanacademy.org/science/physics/mechanical-waves-and-sound" target="_blank">Khan Academy: Ondas Mecánicas y Sonido</a></li>
-                            <li><a href="https://phet.colorado.edu/es/simulations/category/physics/waves" target="_blank">PhET: Simulaciones Interactivas de Ondas</a></li>
-                            <li><a href="https://www.youtube.com/watch?v=VE520z_ugcU" target="_blank">Video: Propiedades de las Ondas</a></li>
-                            <li><a href="https://www.fisicalab.com/apartado/ondas-mecanicas" target="_blank">FisicaLab: Ondas Mecánicas</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="resource-card" data-aos="fade-up" data-aos-delay="100">
-                        <h4><i class="fas fa-water"></i> Tsunamis</h4>
-                        <ul>
-                            <li><a href="https://www.tsunami.gov/" target="_blank">Centro de Alerta de Tsunamis del Pacífico</a></li>
-                            <li><a href="https://www.usgs.gov/special-topics/water-science-school/science/tsunamis-and-tsunami-hazards" target="_blank">USGS: Tsunamis y sus Peligros</a></li>
-                            <li><a href="https://oceanservice.noaa.gov/facts/tsunami.html" target="_blank">NOAA: Información sobre Tsunamis</a></li>
-                            <li><a href="https://www.youtube.com/watch?v=Wx9vPv-T51I" target="_blank">Video: Cómo se Forman los Tsunamis</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="resource-card" data-aos="fade-up" data-aos-delay="200">
-                        <h4><i class="fas fa-map-marked-alt"></i> Tsunamis en Colombia</h4>
-                        <ul>
-                            <li><a href="https://www.dimar.mil.co/tsunami-de-tumaco-1979" target="_blank">DIMAR: Tsunami de Tumaco 1979</a></li>
-                            <li><a href="https://www.sgc.gov.co/sismos/amenaza-de-tsunami" target="_blank">Servicio Geológico Colombiano: Amenaza de Tsunami</a></li>
-                            <li><a href="https://repositorio.gestiondelriesgo.gov.co/handle/20.500.11762/20853" target="_blank">UNGRD: Estudios de Amenaza por Tsunami en Colombia</a></li>
-                            <li><a href="https://www.youtube.com/watch?v=8Zb5V1W_wSY" target="_blank">Video: Reconstrucción del Tsunami de Tumaco</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="resource-card" data-aos="fade-up" data-aos-delay="300">
-                        <h4><i class="fas fa-bell"></i> Sistemas de Alerta Temprana</h4>
-                        <ul>
-                            <li><a href="https://www.jma.go.jp/jma/en/Activities/eew.html" target="_blank">Sistema de Alerta Temprana de Japón</a></li>
-                            <li><a href="https://www.weather.gov/safety/tsunami-warning-system" target="_blank">Sistema de Alerta de Tsunamis de EE.UU.</a></li>
-                            <li><a href="https://www.undrr.org/publication/early-warning-systems-multi-hazard-approach" target="_blank">ONU: Sistemas de Alerta Temprana Multirriesgo</a></li>
-                            <li><a href="https://www.youtube.com/watch?v=bnmHCCNpTMU" target="_blank">Video: Cómo Funcionan los Sistemas de Alerta de Tsunamis</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <h3>Herramientas Útiles</h3>
-                <div class="grid">
-                    <div class="resource-card" data-aos="fade-up" data-aos-delay="400">
-                        <h4><i class="fas fa-chart-bar"></i> Análisis de Datos</h4>
-                        <ul>
-                            <li><a href="https://www.ngdc.noaa.gov/hazard/tsu_db.shtml" target="_blank">Base de Datos Global de Tsunamis (NOAA)</a></li>
-                            <li><a href="https://www.tableau.com/es-es/academic/students" target="_blank">Tableau (versión gratuita para estudiantes)</a></li>
-                            <li><a href="https://www.google.com/sheets/about/" target="_blank">Google Sheets</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="resource-card" data-aos="fade-up" data-aos-delay="500">
-                        <h4><i class="fas fa-pencil-ruler"></i> Diseño y Diagramas</h4>
-                        <ul>
-                            <li><a href="https://www.draw.io/" target="_blank">Draw.io - Diagramas</a></li>
-                            <li><a href="https://www.canva.com/es_co/" target="_blank">Canva - Diseño Gráfico</a></li>
-                            <li><a href="https://www.tinkercad.com/" target="_blank">Tinkercad - Diseño 3D</a></li>
-                        </ul>
-                    </div>
+    </div>
+    
+    <div id="quiz" class="tab-content">
+        <h2><i class="fas fa-question-circle fun-icon"></i> Quiz</h2>
+        <div class="card fun-card">
+            <h3>Comprueba tus Conocimientos</h3>
+            <p>Responde las siguientes preguntas para evaluar tu comprensión de los conceptos clave sobre ondas y tsunamis:</p>
+            
+            <div class="quiz-question">
+                <h4>1. ¿Qué tipo de onda es un tsunami?</h4>
+                <div class="quiz-options">
+                    <label>
+                        <input type="radio" name="q1" value="a"> Una onda electromagnética
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="b"> Una onda sonora
+                    </label>
+                    <label class="correct-option">
+                        <input type="radio" name="q1" value="c"> Una onda mecánica
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="d"> Una onda de radio
+                    </label>
                 </div>
             </div>
-        </div>
-        
-        <div id="evaluacion" class="tab-content">
-            <h2><i class="fas fa-chart-bar fun-icon"></i> Evaluación</h2>
-            <div class="card fun-card">
-                <h3>Criterios de Evaluación</h3>
-                <p>Su proyecto será evaluado según los siguientes criterios:</p>
-                
-                <div class="rubric">
-                    <div class="rubric-row header">
-                        <div class="rubric-cell">Criterio</div>
-                        <div class="rubric-cell">Excelente (5)</div>
-                        <div class="rubric-cell">Bueno (4)</div>
-                        <div class="rubric-cell">Satisfactorio (3)</div>
-                        <div class="rubric-cell">Necesita Mejorar (2-1)</div>
-                    </div>
-                    
-                    <div class="rubric-row">
-                        <div class="rubric-cell">Comprensión de Conceptos Físicos</div>
-                        <div class="rubric-cell">Demuestra comprensión profunda y precisa de los principios físicos de las ondas y su aplicación a tsunamis.</div>
-                        <div class="rubric-cell">Demuestra buena comprensión de los principios físicos con errores menores.</div>
-                        <div class="rubric-cell">Demuestra comprensión básica con algunos errores conceptuales.</div>
-                        <div class="rubric-cell">Muestra comprensión limitada con errores conceptuales significativos.</div>
-                    </div>
-                    
-                    <div class="rubric-row">
-                        <div class="rubric-cell">Diseño del Sistema</div>
-                        <div class="rubric-cell">Diseño innovador, completo y técnicamente viable, con consideración detallada de todos los aspectos.</div>
-                        <div class="rubric-cell">Diseño sólido y viable con consideración de la mayoría de los aspectos importantes.</div>
-                        <div class="rubric-cell">Diseño básico que aborda los elementos esenciales pero carece de detalles.</div>
-                        <div class="rubric-cell">Diseño incompleto o con fallos fundamentales.</div>
-                    </div>
-                    
-                    <div class="rubric-row">
-                        <div class="rubric-cell">Análisis de Datos</div>
-                        <div class="rubric-cell">Análisis exhaustivo de datos históricos con interpretaciones profundas y relevantes.</div>
-                        <div class="rubric-cell">Buen análisis de datos con interpretaciones pertinentes.</div>
-                        <div class="rubric-cell">Análisis básico de datos con interpretaciones limitadas.</div>
-                        <div class="rubric-cell">Análisis superficial o ausente de datos históricos.</div>
-                    </div>
-                    
-                    <div class="rubric-row">
-                        <div class="rubric-cell">Informe Técnico</div>
-                        <div class="rubric-cell">Informe completo, bien estructurado, con argumentación sólida y respaldada por evidencia.</div>
-                        <div class="rubric-cell">Informe bien estructurado con buena argumentación.</div>
-                        <div class="rubric-cell">Informe estructurado con argumentación básica.</div>
-                        <div class="rubric-cell">Informe desorganizado o incompleto.</div>
-                    </div>
-                    
-                    <div class="rubric-row">
-                        <div class="rubric-cell">Presentación</div>
-                        <div class="rubric-cell">Presentación clara, convincente y profesional que demuestra dominio del tema.</div>
-                        <div class="rubric-cell">Presentación clara y bien organizada.</div>
-                        <div class="rubric-cell">Presentación organizada pero con algunas deficiencias en la comunicación.</div>
-                        <div class="rubric-cell">Presentación desorganizada o poco clara.</div>
-                    </div>
+            
+            <div class="quiz-question">
+                <h4>2. ¿Cuál de las siguientes características de las ondas determina la cantidad de energía que transporta?</h4>
+                <div class="quiz-options">
+                    <label>
+                        <input type="radio" name="q2" value="a"> Longitud de onda
+                    </label>
+                    <label class="correct-option">
+                        <input type="radio" name="q2" value="b"> Amplitud
+                    </label>
+                    <label>
+                        <input type="radio" name="q2" value="c"> Frecuencia
+                    </label>
+                    <label>
+                        <input type="radio" name="q2" value="d"> Velocidad
+                    </label>
                 </div>
             </div>
+            
+            <div class="quiz-question">
+                <h4>3. ¿Cuál es la principal causa de los tsunamis?</h4>
+                <div class="quiz-options">
+                    <label class="correct-option">
+                        <input type="radio" name="q3" value="a"> Terremotos submarinos
+                    </label>
+                    <label>
+                        <input type="radio" name="q3" value="b"> Huracanes
+                    </label>
+                    <label>
+                        <input type="radio" name="q3" value="c"> Cambios en las mareas
+                    </label>
+                    <label>
+                        <input type="radio" name="q3" value="d"> Corrientes oceánicas
+                    </label>
+                </div>
+            </div>
+            
+            <div class="quiz-question">
+                <h4>4. ¿Por qué los tsunamis pueden viajar a gran velocidad en aguas profundas pero son apenas perceptibles hasta que llegan a la costa?</h4>
+                <div class="quiz-options">
+                    <label>
+                        <input type="radio" name="q4" value="a"> Porque pierden energía durante el viaje
+                    </label>
+                    <label>
+                        <input type="radio" name="q4" value="b"> Porque son absorbidos por el agua salada
+                    </label>
+                    <label class="correct-option">
+                        <input type="radio" name="q4" value="c"> Porque tienen gran longitud de onda pero poca altura en aguas profundas
+                    </label>
+                    <label>
+                        <input type="radio" name="q4" value="d"> Porque son invisibles bajo el agua
+                    </label>
+                </div>
+            </div>
+            
+            <div class="quiz-question">
+                <h4>5. ¿Qué evento sísmico generó un tsunami devastador en la costa pacífica colombiana en 1979?</h4>
+                <div class="quiz-options">
+                    <label>
+                        <input type="radio" name="q5" value="a"> Un terremoto de magnitud 6.2 en Cali
+                    </label>
+                    <label class="correct-option">
+                        <input type="radio" name="q5" value="b"> Un terremoto de magnitud 7.9 cerca de Tumaco
+                    </label>
+                    <label>
+                        <input type="radio" name="q5" value="c"> Una erupción volcánica submarina
+                    </label>
+                    <label>
+                        <input type="radio" name="q5" value="d"> Un deslizamiento de tierra submarino
+                    </label>
+                </div>
+            </div>
+            
+            <button class="quiz-button" onclick="checkQuiz()">Verificar Respuestas</button>
+            
+            <div class="feedback success">
+                <h4><i class="fas fa-check-circle"></i> ¡Excelente!</h4>
+                <p>Has demostrado un buen entendimiento de los conceptos de ondas y tsunamis. ¡Sigue así!</p>
+            </div>
+            
+            <div class="feedback error">
+                <h4><i class="fas fa-exclamation-circle"></i> Revisa tus respuestas</h4>
+                <p>Algunas respuestas no son correctas. Revisa los materiales y vuelve a intentarlo.</p>
+            </div>
         </div>
+    </div>
+    
+    <div class="reactions">
+        <button class="reaction-button" onclick="showConfetti()">
+            <i class="fas fa-thumbs-up"></i> ¡Me gustó!
+        </button>
+        <button class="reaction-button">
+            <i class="fas fa-lightbulb"></i> ¡Aprendí mucho!
+        </button>
+        <button class="reaction-button">
+            <i class="fas fa-share-alt"></i> Compartir
+        </button>
+    </div>
+</div>
+
+<!-- Script simplificado para las pestañas -->
+<script>
+    // Función para cambiar de pestaña - versión simplificada
+    function openTab(evt, tabId) {
+        console.log("Cambiando a pestaña:", tabId);
         
-        <div id="conclusion" class="tab-content">
-            <h2><i class="fas fa-flag-checkered fun-icon"></i> Conclusión</h2>
-            <div class="card fun-card">
-                <h3>Reflexión Final</h3>
-                <p>A lo largo de esta WebQuest, han explorado los fascinantes principios físicos de las ondas y su aplicación en un contexto real y de gran importancia:
+        // 1. Ocultar todas las pestañas
+        var tabContents = document.getElementsByClassName("tab-content");
+        for (var i = 0; i < tabContents.length; i++) {
+            tabContents[i].style.display = "none";
+            tabContents[i].classList.remove("active");
+        }
+        
+        // 2. Desactivar todos los botones
+        var tabButtons = document.getElementsByClassName("tab-button");
+        for (var i = 0; i < tabButtons.length; i++) {
+            tabButtons[i].classList.remove("active");
+        }
+        
+        // 3. Mostrar la pestaña seleccionada
+        document.getElementById(tabId).style.display = "block";
+        document.getElementById(tabId).classList.add("active");
+        
+        // 4. Activar el botón seleccionado
+        if (evt && evt.currentTarget) {
+            evt.currentTarget.classList.add("active");
+        }
+    }
+    
+    // Inicializar la primera pestaña al cargar la página
+    document.addEventListener("DOMContentLoaded", function() {
+        // Mostrar la pestaña de introducción por defecto
+        document.getElementById("introduccion").style.display = "block";
+        document.getElementById("introduccion").classList.add("active");
+        
+        // Activar el primer botón
+        var firstButton = document.getElementsByClassName("tab-button")[0];
+        if (firstButton) {
+            firstButton.classList.add("active");
+        }
+        
+        // Ocultar los mensajes de retroalimentación del quiz al inicio
+        document.querySelector('.feedback.success').style.display = 'none';
+        document.querySelector('.feedback.error').style.display = 'none';
+    });
+    
+    // Función para verificar el quiz
+    function checkQuiz() {
+        console.log("Verificando respuestas del quiz...");
+        
+        // Respuestas correctas
+        const correctAnswers = {
+            'q1': 'c', // Una onda mecánica
+            'q2': 'b', // Amplitud
+            'q3': 'a', // Terremotos submarinos
+            'q4': 'c', // Porque tienen gran longitud de onda pero poca altura en aguas profundas
+            'q5': 'b'  // Un terremoto de magnitud 7.9 cerca de Tumaco
+        };
+        
+        let score = 0;
+        let totalQuestions = Object.keys(correctAnswers).length;
+        
+        // Verificar cada pregunta
+        for (let question in correctAnswers) {
+            const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+            
+            if (selectedOption) {
+                const userAnswer = selectedOption.value;
+                const isCorrect = userAnswer === correctAnswers[question];
+                
+                // Marcar visualmente las respuestas correctas e incorrectas
+                const parentLabel = selectedOption.parentElement;
+                
+                // Eliminar clases previas
+                parentLabel.classList.remove('correct-answer', 'wrong-answer');
+                
+                if (isCorrect) {
+                    score++;
+                    parentLabel.classList.add('correct-answer');
+                } else {
+                    parentLabel.classList.add('wrong-answer');
+                    
+                    // Marcar la respuesta correcta
+                    const correctLabel = document.querySelector(`input[name="${question}"][value="${correctAnswers[question]}"]`).parentElement;
+                    correctLabel.classList.add('correct-answer');
+                }
+            }
+        }
+        
+        // Mostrar retroalimentación
+        const successFeedback = document.querySelector('.feedback.success');
+        const errorFeedback = document.querySelector('.feedback.error');
+        
+        if (score === totalQuestions) {
+            successFeedback.style.display = 'block';
+            errorFeedback.style.display = 'none';
+            showConfetti(); // Mostrar confeti para celebrar
+            
+            // Enviar resultados por correo
+            sendQuizResults(score, totalQuestions);
+        } else {
+            successFeedback.style.display = 'none';
+            errorFeedback.style.display = 'block';
+            errorFeedback.querySelector('p').textContent = `Has acertado ${score} de ${totalQuestions} preguntas. Revisa los materiales y vuelve a intentarlo.`;
+        }
+    }
+    
+    // Función para enviar resultados por correo
+    function sendQuizResults(score, total) {
+        // En un entorno real, esto se haría con un backend
+        // Aquí simulamos el envío con un mensaje
+        console.log(`Enviando resultados (${score}/${total}) a doctorado.camarillo@gmail.com`);
+        
+        // Crear un mensaje para el usuario
+        const quizSection = document.querySelector('#quiz .card');
+        const resultMessage = document.createElement('div');
+        resultMessage.className = 'email-confirmation';
+        resultMessage.innerHTML = `
+            <div style="background-color: #f0f8ff; border: 1px solid #4682b4; padding: 15px; margin-top: 20px; border-radius: 8px;">
+                <h4 style="color: #4682b4; margin-top: 0;"><i class="fas fa-envelope"></i> Resultados Enviados</h4>
+                <p>Tus resultados (${score}/${total}) han sido enviados a: <strong>doctorado.camarillo@gmail.com</strong></p>
+            </div>
+        `;
+        
+        // Añadir el mensaje al final de la sección del quiz
+        quizSection.appendChild(resultMessage);
+    }
+    
+    // Función para mostrar confeti
+    function showConfetti() {
+        for (let i = 0; i < 100; i++) {
+            createConfetti();
+        }
+    }
+    
+    // Función para crear confeti
+    function createConfetti() {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        
+        // Colores aleatorios para el confeti
+        const colors = ['#f94144', '#f3722c', '#f8961e', '#f9c74f', '#90be6d', '#43aa8b', '#577590'];
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        
+        // Posición aleatoria
+        const left = Math.random() * 100;
+        
+        // Aplicar estilos
+        confetti.style.backgroundColor = randomColor;
+        confetti.style.left = left + 'vw';
+        confetti.style.animationDuration = (Math.random() * 3 + 2) + 's'; // Entre 2 y 5 segundos
+        
+        // Añadir al DOM
+        document.body.appendChild(confetti);
+        
+        // Eliminar después de la animación
+        setTimeout(() => {
+            confetti.remove();
+        }, 5000);
+    }
+</script>
+
+<!-- Añadir estilos para el confeti y las respuestas del quiz -->
+<style>
+    /* Estilos para las respuestas correctas e incorrectas */
+    .correct-answer {
+        background-color: rgba(6, 214, 160, 0.2) !important;
+        border-left: 4px solid #06d6a0 !important;
+        padding-left: 10px !important;
+        border-radius: 4px !important;
+    }
+    
+    .wrong-answer {
+        background-color: rgba(239, 71, 111, 0.2) !important;
+        border-left: 4px solid #ef476f !important;
+        padding-left: 10px !important;
+        border-radius: 4px !important;
+    }
+    
+    /* Estilos para el feedback del quiz */
+    .feedback {
+        display: none;
+        margin-top: 20px;
+        padding: 15px;
+        border-radius: 8px;
+    }
+    
+    .feedback.success {
+        background-color: rgba(6, 214, 160, 0.1);
+        border-left: 4px solid #06d6a0;
+    }
+    
+    .feedback.error {
+        background-color: rgba(239, 71, 111, 0.1);
+        border-left: 4px solid #ef476f;
+    }
+    
+    /* Estilos para el botón del quiz */
+    .quiz-button {
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: background-color 0.3s;
+    }
+    
+    .quiz-button:hover {
+        background-color: var(--primary-color-dark);
+    }
+    
+    /* Estilos para el confeti */
+    .confetti {
+        position: fixed;
+        width: 10px;
+        height: 10px;
+        background-color: #f94144;
+        top: -10px;
+        z-index: 9999;
+        animation: fall linear forwards;
+    }
+    
+    @keyframes fall {
+        0% {
+            top: -10px;
+            transform: rotate(0deg) translateX(0);
+        }
+        100% {
+            top: 100vh;
+            transform: rotate(720deg) translateX(100px);
+        }
+    }
+</style>
+</body>
+</html>

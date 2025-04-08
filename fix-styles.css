@@ -1,0 +1,24 @@
+/* Estilos para forzar la visualización de las pestañas */
+.tab-content.active {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+#introduccion, #objetivos, #tarea, #proceso, #recursos, #evaluacion, #conclusion, #quiz {
+    color: #333 !important;
+}
+
+#introduccion.active, #objetivos.active, #tarea.active, #proceso.active, 
+#recursos.active, #evaluacion.active, #conclusion.active, #quiz.active {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Asegurarse de que el texto sea visible */
+.tab-content p, .tab-content h2, .tab-content h3, .tab-content h4, 
+.tab-content li, .tab-content span, .tab-content div {
+    color: #333 !important;
+    opacity: 1 !important;
+}
